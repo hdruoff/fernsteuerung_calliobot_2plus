@@ -29,9 +29,7 @@ let motor_links = 0
 let geschwindigkeit = 0
 radio.setGroup(1)
 radio.setTransmitPower(7)
-basic.forever(function () {
-	
-})
+calliBot2.servo(C2Servo.Servo1, 45)
 basic.forever(function () {
     led.unplot(led_x_wert, led_y_wert)
     led_x_wert = Math.map(richtung, -50, 50, 0, 5)
@@ -51,4 +49,7 @@ basic.forever(function () {
     } else {
         Abstandssensor()
     }
+})
+basic.forever(function () {
+	
 })
