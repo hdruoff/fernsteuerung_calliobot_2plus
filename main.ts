@@ -2,6 +2,9 @@ function Abstandssensor () {
     if (calliBot2.entfernung(C2Einheit.cm) < 10 || (calliBot2.readBumperSensor(C2Sensor.links, C2State.an) || calliBot2.readBumperSensor(C2Sensor.rechts, C2State.an))) {
         geschwindigkeit = 0
         calliBot2.motorStop(C2Motor.beide, C2Stop.Bremsen)
+        basic.pause(100)
+        calliBot2.motor(C2Motor.beide, C2Dir.rueckwaerts, geschwindigkeit)
+        basic.pause(1000)
     } else {
         geschwindigkeit = geschwindigkeit
         calliBot2.motor(C2Motor.links, C2Dir.vorwaerts, motor_links)
